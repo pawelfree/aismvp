@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-pocztowy: (
+    50 : #fae6e4,
+    100 : #f2bfbc,
+    200 : #ea958f,
+    300 : #e26b62,
+    400 : #db4b40,
+    500 : #d52b1e,
+    600 : #d0261a,
+    700 : #ca2016,
+    800 : #c41a12,
+    900 : #ba100a,
+    A100 : #ffe6e5,
+    A200 : #ffb4b3,
+    A400 : #ff8280,
+    A700 : #ff6a66,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-pocztowy-accent: (
+  
+    50 : #fae6e4,
+    100 : #f2bfbc,
+    200 : #ea958f,
+    300 : #e26b62,
+    400 : #db4b40,
+    500 : #d52b1e,
+    600 : #d0261a,
+    700 : #ca2016,
+    800 : #c41a12,
+    900 : #67b6c1,
+    A100 : #ffe6e5,
+    A200 : #67b6c1,
+    A400 : #ff8280,
+    A700 : #ff6a66,
+    contrast: (
+        50 : #ffffff,
+        100 : #ffffff,
+        200 : #ffffff,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$custom-theme-primary: mat-palette($mat-pocztowy);
+$custom-theme-accent: mat-palette($mat-pocztowy-accent, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme-footer: mat-palette($mat-gray);
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+
+$custom-typography: mat-typography-config(
+  $font-family: '"Open Sans",Arial,Helvetica,sans-serif;'
+);
+
+@include angular-material-typography($custom-typography);
+
+@include angular-material-theme($custom-theme);
+
+html, body { 
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  height: 100%; }
+
+body { margin: 0;font-family: Roboto, "Helvetica Neue", sans-serif; }

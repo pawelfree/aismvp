@@ -1,0 +1,15 @@
+<div>
+    <mat-card *ngIf="loading$ | async; else dataAviable">
+        <mat-card-title>Pobieram dane...</mat-card-title>
+        <mat-card-content>
+            <mat-progress-spinner style="margin: 20px" mode="indeterminate"></mat-progress-spinner>
+            <p>Status pobierania: {{ progress$ | async }}</p>
+        </mat-card-content>
+    </mat-card>
+    <ng-template #dataAviable>
+      <mat-card *ngIf="data$ | async as text">
+        <mat-card-title>Odebrane dane</mat-card-title>
+        <mat-card-content style="white-space: pre;">{{text}}</mat-card-content>
+      </mat-card>
+    </ng-template>
+</div>
